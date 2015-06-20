@@ -3,7 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Duality;
+#if !__ANDROID__
 using Duality.Editor;
+#endif
 
 namespace ScriptingPlugin.Resources
 {
@@ -25,10 +27,14 @@ namespace ScriptingPlugin.Resources
 
         public ScriptResourceBase()
         {
-            ScriptMetadataService = ScriptingPluginCorePlugin.ScriptMetadataService;
+#if !__ANDROID__
+			ScriptMetadataService = ScriptingPluginCorePlugin.ScriptMetadataService;
+#endif
         }
 
+#if !__ANDROID__
         [EditorHintFlags(MemberFlags.Invisible)]
+#endif
         public Assembly Assembly
         {
             get { return _assembly; }

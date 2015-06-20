@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF85546C-ED8C-44C3-8FBD-D538C46CFE76}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScriptingPlugin.Android</RootNamespace>
+    <AssemblyName>ScriptingPlugin.Android.core</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Duality.Android, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Duality.Android.0.1.7\lib\MonoAndroid\Duality.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FarseerDuality, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Farseer.Duality.Android.0.1.7\lib\MonoAndroid\FarseerDuality.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flow.Android, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flow.Android.0.2.2\lib\MonoAndroid\Flow.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CorePlugin\CompilerResult.cs">
+      <Link>CompilerResult.cs</Link>
+    </Compile>
+    <Compile Include="..\CorePlugin\CoroutineHelper.cs">
+      <Link>CoroutineHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\CorePlugin\DualityScript.cs">
+      <Link>DualityScript.cs</Link>
+    </Compile>
+    <Compile Include="..\CorePlugin\IScriptCompilerService.cs">
+      <Link>IScriptCompilerService.cs</Link>
+    </Compile>
+    <Compile Include="..\CorePlugin\IScriptMetadataService.cs">
+      <Link>IScriptMetadataService.cs</Link>
+    </Compile>
+    <Compile Include="..\CorePlugin\PrebuildScripts.cs">
+      <Link>PrebuildScripts.cs</Link>
+    </Compile>
+    <Compile Include="..\CorePlugin\Resources\ScriptResourceBase.cs">
+      <Link>ScriptResourceBase.cs</Link>
+    </Compile>
+    <Compile Include="..\CorePlugin\ScriptCompilerResult.cs">
+      <Link>ScriptCompilerResult.cs</Link>
+    </Compile>
+    <Compile Include="..\CorePlugin\ScriptComponent.cs">
+      <Link>ScriptComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\ScriptingCSCorePlugin\CSharpScript.cs">
+      <Link>CSharpScript.cs</Link>
+    </Compile>
+    <Compile Include="..\ScriptingFSCorePlugin\FSharpScript.cs">
+      <Link>FSharpScript.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Values\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
