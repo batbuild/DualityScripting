@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFilles", "SolutionF
 		appveyor.yml = appveyor.yml
 		Build.bat = Build.bat
 		completeBuild.fsx = completeBuild.fsx
+		nuget\ScriptingPlugin.AndroidRuntime.nuspec = nuget\ScriptingPlugin.AndroidRuntime.nuspec
 		nuget\ScriptingPlugin.CSharp.nuspec = nuget\ScriptingPlugin.CSharp.nuspec
 		nuget\ScriptingPlugin.Editor.nuspec = nuget\ScriptingPlugin.Editor.nuspec
 		nuget\ScriptingPlugin.FSharp.nuspec = nuget\ScriptingPlugin.FSharp.nuspec
