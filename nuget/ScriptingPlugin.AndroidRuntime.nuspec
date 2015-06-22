@@ -3,7 +3,7 @@
     <metadata>
 		<id>@project@</id>
 		<version>@build.number@</version>
-        <title>Duality Scripting Plugin C#. Use this package for C# support</title>
+        <title>Android Runtime for Duality scripting Plugin C#. Use this package for C# support on Android</title>
 		<authors>@authors@</authors>
 		<owners>@authors@</owners>
         <projectUrl>https://github.com/batbuild/DualityScripting</projectUrl>
