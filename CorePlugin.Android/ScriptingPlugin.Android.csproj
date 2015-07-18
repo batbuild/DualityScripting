@@ -60,6 +60,9 @@
     <Compile Include="..\CorePlugin\CompilerResult.cs">
       <Link>CompilerResult.cs</Link>
     </Compile>
+    <Compile Include="..\CorePlugin\CorePlugin.cs">
+      <Link>CorePlugin.cs</Link>
+    </Compile>
     <Compile Include="..\CorePlugin\CoroutineHelper.cs">
       <Link>CoroutineHelper.cs</Link>
     </Compile>
