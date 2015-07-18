@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+#if !__ANDROID__
 using System.IO.Abstractions;
+#endif
 using Duality;
 
 namespace ScriptingPlugin
@@ -15,8 +17,9 @@ namespace ScriptingPlugin
 		protected override void InitPlugin()
 		{
 			base.InitPlugin();
-
+#if !__ANDROID__
 			ScriptMetadataService = new ScriptMetadataService(new FileSystem());
+#endif
 		}
 
 		public static void ExcludeAssembliesFromTypeSearch()
