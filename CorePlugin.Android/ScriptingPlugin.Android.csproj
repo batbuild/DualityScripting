@@ -38,11 +38,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Duality.Android, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Duality.Android.0.1.7\lib\MonoAndroid\Duality.Android.dll</HintPath>
+      <HintPath>..\packages\Duality.Android.0.1.33\lib\MonoAndroid\Duality.Android.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FarseerDuality, Version=0.1.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Farseer.Duality.Android.0.1.7\lib\MonoAndroid\FarseerDuality.dll</HintPath>
+    <Reference Include="FarseerDuality.Android, Version=0.1.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Farseer.Duality.Android.0.1.10\lib\MonoAndroid\FarseerDuality.Android.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Flow.Android, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
