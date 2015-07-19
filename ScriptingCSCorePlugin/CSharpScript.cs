@@ -18,7 +18,6 @@ namespace ScriptingPlugin.Resources
 
 		public CSharpScript()
 		{
-			
 		}
 
 		public CSharpScript(IScriptCompilerService compilerService)
@@ -28,8 +27,8 @@ namespace ScriptingPlugin.Resources
 
 		protected override void OnLoaded()
 		{
-#if !__ANDROID__
-			ScriptCompiler = ScriptingCsCorePlugin.CSharpScriptCompiler;
+#if DEBUG
+			ScriptCompiler = ScriptingPluginCorePlugin.CSharpScriptCompiler;
 #endif
 			base.OnLoaded();
 		}

@@ -13,7 +13,9 @@ namespace ScriptingPlugin
 		public const string DataScripts = "Data\\Scripts\\";
 		public const string ReferenceAssembliesFile = "ScriptReferences.txt";
 
-		public static IScriptMetadataService ScriptMetadataService { get; set; } 
+		public static IScriptMetadataService ScriptMetadataService { get; set; }
+		public static IScriptCompilerService CSharpScriptCompiler { get; set; }
+		public static IScriptCompilerService FSharpScriptCompiler { get; set; }
 
 		protected override void InitPlugin()
 		{

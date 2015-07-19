@@ -17,8 +17,8 @@ namespace ScriptingPlugin.Resources
 
 		protected override void OnLoaded()
 		{
-#if !__ANDROID__
-			ScriptCompiler = ScriptingFsCorePlugin.FSharpScriptCompiler;
+#if DEBUG
+			ScriptCompiler = ScriptingPluginCorePlugin.FSharpScriptCompiler;
 #endif
 			base.OnLoaded();
 		}

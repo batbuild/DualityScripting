@@ -9,7 +9,7 @@ let buildDir  = @".\build\"
 let testDir   = @".\test\"
 let packagesDir = @".\deploy\"
 // version info
-let version = if isLocalBuild then "0.2-local" else "0.2."+buildVersion
+let version = if isLocalBuild then "0.3-local" else "0.3."+buildVersion
 
 
 
@@ -107,8 +107,9 @@ Target "NUnitTest" (fun _ ->
 Target "CreateNuget" (fun _ ->      
     ["nuget/ScriptingPlugin.nuspec";
     "nuget/ScriptingPlugin.CSharp.nuspec";
-    "nuget/ScriptingPlugin.Editor.nuspec";
-    "nuget/ScriptingPlugin.FSharp.nuspec"]
+    "nuget/ScriptingPlugin.CsEditor.nuspec";
+    "nuget/ScriptingPlugin.FSharp.nuspec";
+    "nuget/ScriptingPlugin.FsEditor.nuspec" ]
     |> List.iter (fun spec ->
     NuGet (fun p -> 
         {p with 
@@ -137,6 +138,7 @@ Target "AndroidPack" (fun _ ->
             OutputPath = packagesDir
         }) spec)
 )
+
 // Dependencies
 "Clean"    
   ==> "SetVersions"
