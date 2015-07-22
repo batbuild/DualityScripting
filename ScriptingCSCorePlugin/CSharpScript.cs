@@ -2,7 +2,6 @@
 using Duality;
 #if !__ANDROID__
 using Duality.Editor;
-using ScriptingPlugin.CSharp;
 #endif
 
 namespace ScriptingPlugin.Resources
@@ -27,10 +26,10 @@ namespace ScriptingPlugin.Resources
 
 		protected override void OnLoaded()
 		{
-#if DEBUG
-			ScriptCompiler = ScriptingPluginCorePlugin.CSharpScriptCompiler;
-#endif
 			base.OnLoaded();
+
+			ScriptCompiler = ScriptingPluginCorePlugin.CSharpScriptCompiler;
+
 		}
 	}
 }
