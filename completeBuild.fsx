@@ -124,8 +124,8 @@ Target "CreateNuget" (fun _ ->
 )
 
 Target "AndroidPack" (fun _ ->      
-    ["nuget/ScriptingPlugin.AndroidRuntime.nuspec"]
-    |> List.iter (fun spec ->
+    
+    
     NuGet (fun p -> 
         {p with 
             Authors = info.Authors
@@ -137,24 +137,7 @@ Target "AndroidPack" (fun _ ->
             Publish = hasBuildParam "nugetkey"
             PublishUrl = getBuildParamOrDefault "nugetUrl" ""          
             OutputPath = packagesDir
-        }) spec)
-)
-
-Target "AndroidPack" (fun _ ->      
-    ["nuget/ScriptingPlugin.AndroidRuntime.nuspec"]
-    |> List.iter (fun spec ->
-    NuGet (fun p -> 
-        {p with 
-            Authors = info.Authors
-            Project = "DualityScripting.Android"
-            Version = info.Version
-            Description = info.Description                                                      
-            Summary = info.Description                        
-            AccessKey = getBuildParamOrDefault "nugetkey" ""
-            Publish = hasBuildParam "nugetkey"
-            PublishUrl = getBuildParamOrDefault "nugetUrl" ""          
-            OutputPath = packagesDir
-        }) spec)
+        }) "nuget/ScriptingPlugin.AndroidRuntime.nuspec"
 )
 
 // Dependencies
