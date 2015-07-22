@@ -17,10 +17,7 @@ namespace ScriptingPlugin
 		public static IScriptCompilerService CSharpScriptCompiler { get; set; }
 		public static IScriptCompilerService FSharpScriptCompiler { get; set; }
 
-
-		public static IScriptCompilerService CSharpScriptCompiler { get; set; }
-		public static IScriptCompilerService FSharpScriptCompiler { get; set; }
-
+		
 
 		protected override void InitPlugin()
 		{
